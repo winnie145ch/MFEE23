@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 安裝字體外掛 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@100;200;300;400;500;600;700&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        .wrap{
+            width: 70%;
+            min-width: 510px;
+            border: 20px solid #ccc;
+            overflow: auto;
+            /* 爆版的時候出現卷軸 */
+            margin: auto;
+            font-family: 'Montagu Slab', serif;
+            font-family: 'Montagu Slab', serif;
+            font-family: 'Noto Serif TC', serif;
+        }
+        h1{
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 2em;
+            /* 行高 */
+        }
+        h2{
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 2em;            
+        }
+        p{    
+            line-height: 1.7em;
+            text-align: justify;
+            /* 齊行 │← →│ */
+            padding:0 15px;
+        }
+        img{
+            float: left;
+            /* 將 p 往上挪，文字繞圖 */
+            padding-right: 15px;
+        }
+        ul img{
+            width: 350px;
+        /* ul父層底下的 img */
+        }
+        span{
+            color: rgb(216, 51, 51);
+            font-weight: 700;
+        }
+        li{
+            clear: left;
+            /* img 是行內元素會以並排的方式排版亂掉 */
+            padding: 20px 0;
+            overflow: auto;
+            /* img 現在是 float的狀態，用 overflow強制算進 img的空間*/
+        }
+        li:hover{
+            background-color: rgb(145, 233, 255);
+        }
+    </style>
+</head>
+<body>
+    <!-- .wrap>h1+p+h2+(ul+li*4) -->
+    <div class="wrap">
+        <h1>鬼滅之刃</h1>       
+        <p>
+            <img src="img/50264978082_99d33410fd_c.jpg" alt="很多人在一起的合照" width="450px">
+            《鬼滅之刃》（日語：鬼滅の刃），簡稱《鬼滅》，是日本漫畫家吾峠呼世晴所創作的奇幻漫畫作品，描述主角炭治郎為了尋求讓被變成鬼的妹妹復原的方法，踏上斬鬼之旅的和風刀劍奇譚[1]。於2016年2月15日至2020年5月18日在《週刊少年Jump》連載[2]，全205話。漫畫改編電視動畫第一季「竈門炭治郎 立志篇」於2019年4月至9月播放，並於2020年10月16日上映續集電影《鬼滅之刃劇場版 無限列車篇》[3]。動畫第二季「鬼滅之刃 遊郭篇」預定於2021年播放[4]。
+
+        該漫畫系列在Oricon公信榜的統計中為2020年日本國內最暢銷漫畫，年銷量超過8000萬冊（僅有2020年為最暢銷）[5]。截至2021年2月，漫畫的累積發行量（含電子版）已達1.5億冊[6]。</p>
+                
+        <h2>人物介紹</h2>
+        <ul>
+            <li>
+                <p>
+                    <img src="img/Tanjirou.jpg" alt="">
+                    <span>竈門炭治郎</span>
+                    （竈門 炭治郎／かまど たんじろう Kamado Tanjirou ?）配音：花江夏樹（日本）；錢欣郁（台灣）；星潮（中國大陸）；張振熙（香港）；Zach Aguilar（美國）一名善良的少年，具有敏銳的嗅覺，能在與鬼的戰鬥中聞出破綻的氣味。為了將變成鬼的妹妹變回人類、並為死去的家人報仇，加入了專門狩獵惡鬼的組織「鬼殺隊」。
+                </p>
+            </li>
+
+            <li>
+                <p>
+                    <img src="img/Nezuko.jpg" alt="">
+                    <span>竈門禰豆子</span>
+                    （竈門 禰豆子／かまど ねずこ Kamado Nezuko ?）
+                    配音：鬼頭明里（日本）；連婉鈞（台灣）；沈念如（中國大陸）；楊婉潼（香港）；Abby Trott（美國）炭治郎的妹妹，在與其他家人一同被鬼襲擊時，因為傷口沾染鬼舞辻無慘的血液，於瀕死之際被變化成鬼，總是在危難時保護炭治郎，並與其他人行動。
+                </p>
+            </li>
+            
+            <li>
+                <p>
+                    <img src="img/Zenitsu.jpg" alt="">
+                    <span>我妻善逸</span>
+                    （我妻 善逸／あがつま ぜんいつ Agatsuma Zenitsu ?）
+                    配音：下野紘（日本）；江志倫（台灣）；李蘭陵（中國大陸）；杜景煜（香港）；Aleks Le（美國）自己極度沒有自信的少年，常常說出自嘲的發言。擁有極佳聽覺，能分別出鬼和人類的聲音。極度恐懼時會陷入沉睡，並激發出強勁的實力。
+                </p>
+            </li>
+
+            <li>
+                <p>
+                    <img src="img/Inosuke.jpg" alt="">
+                    <span>嘴平伊之助</span>
+                    （嘴平 伊之助／はしびら いのすけ Hashibira Inosuke ?）配音：松岡禎丞（日本）；陳彥鈞（台灣）；皇貞季（中國大陸）；陳啟織（香港）；Bryce Papenbrook（美國）
+                    經常戴著野豬頭套，頭套下是個美少年，性格極為好戰。因為在山林中成長而有著銳利的觸覺，能精確捕捉到尚未進入視野的對象之所在位置。
+                </p>
+            </li>
+        </ul>
+    </div>
+    
+</body>
+</html>

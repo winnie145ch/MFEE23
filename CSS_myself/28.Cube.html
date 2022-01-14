@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cube</title>
+    <style>
+        body{
+            margin: 200px;
+        }
+        .camera{
+            width: 200px;
+            height: 200px;
+            perspective: 800px;
+            perspective-origin: 50% 50%;
+            }
+        .cube{
+            transform-style: preserve-3d;
+            animation: rotate-cube 3s infinite ease;
+        }
+        .cube div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+ 
+        }
+        .left{
+            background: rgba(143, 188, 143, 0.5);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .right{
+            background: rgba(0, 139, 139, 0.5);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .top{
+            background: rgba(189, 183, 107, 0.5);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom{
+            background: rgb(84, 106, 47, 0.5);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .back{
+            background: rgba(48, 80, 80, 0.5);
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .front{
+            background: rgba(153, 205, 50, 0.5);
+            transform: translateZ(100px);
+        }
+        @keyframes rotate-cube {
+            from{
+                /* transform: rotate3d(0, 0, 0, 0deg); */
+                transform: translateX(0px) rotateX(0deg) rotateY(0deg);
+            }
+            to{
+                /* transform: rotate3d(4, 2, 0, 360deg); */
+                transform: translateX(500px) rotateX(540deg) rotateY(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="camera">
+        <div class="cube">
+            <div class="left">left</div>
+            <div class="right">right</div>
+            <div class="top">top</div>
+            <div class="bottom">bottom</div>
+            <div class="front">front</div>
+            <div class="back">back</div>
+        </div>
+    </div>
+    
+</body>
+</html>

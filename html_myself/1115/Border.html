@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Border</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: bisque;            
+            margin: 10px;
+            border: 3px solid #777;
+        }
+        .box1{
+            border-top-color: cadetblue;
+            border-bottom-style: dashed;
+            border-right-width: 6px;
+        }
+        .box2{
+            border: none;
+            border-top-style: groove;
+            border-top-color: cadetblue;
+            border-top-width: 5px;
+            /* 顏色、樣式、粗細缺一不可，才能形成Border */
+            /* border-style是改4邊的樣式 (不加方位)*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

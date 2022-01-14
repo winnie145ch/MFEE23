@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+    <style>
+        .wrap {
+            width: 700px;
+            height: 700px;
+            background-color: lightcyan;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightsalmon;
+            margin: 10px;
+        }
+        .linear{
+            transition: all 3s linear 1s;
+        }
+        .ease{
+            transition: all 3s ease 1s;
+        }
+        .ease-in{
+            transition: all 3s ease-in 1s;
+        }
+        .ease-out{
+            transition: all 3s ease-out 1s;
+        }
+        .ease-in-out{
+            transition: all 3s ease-in-out 1s;
+        }
+        .wrap:hover .linear {
+            width: 500px;
+            background-color: lightcoral;
+        }
+        .wrap:hover .ease{
+            width: 500px;
+            background-color: lightcoral;
+        }
+        .wrap:hover .ease-in{
+            width: 500px;
+            background-color: lightcoral;
+        }
+        .wrap:hover .ease-out{
+            width: 500px;
+            background-color: lightcoral;
+        }
+        .wrap:hover .ease-in-out{
+            width: 500px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box linear">linear</div>
+        <div class="box ease">ease</div>
+        <div class="box ease-in">ease-in</div>
+        <div class="box ease-out">ease-out</div>
+        <div class="box ease-in-out">ease-in-out</div>
+    </div>
+
+</body>
+
+</html>

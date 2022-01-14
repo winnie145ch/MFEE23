@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+    <script>
+      //   const ar = [123, "cat", 6, { name: "Amy" }];
+      // for(let i=0; i<ar.length; i++){
+      //     console.log('for'+ i, ar[i]);
+      // }
+      // console.log('---------');
+      // for(let s in ar){
+      //     console.log('for/in '+ s + ':' + ar[s]);
+      // }
+      // console.log('---------');
+      // for(let v of ar){
+      //     console.log('for/of '+ v);
+      // }
+
+      console.log("---------");
+      //   ar[9] = 456;
+
+      // for(let i = 0; i < ar.length ; i++){
+      //     console.log('for' + i + ':' + ar[i]);
+      // }
+      // console.log('---------');
+      // for(let s in ar){
+      //     console.log('for/in '+ s + ':' + ar[s]);
+      // }
+      // console.log('---------');
+      // for(let v of ar){
+      //     console.log('for/of '+ v);
+      // }
+
+      console.log("---------");
+      //   ar[-2] = -10;
+      //   ar["name"] = "aaron";
+
+      // for(let i = 0; i < ar.length ; i++){
+      //     console.log('for' + i + ':' + ar[i]);
+      // }
+      // console.log('---------');
+      // for(let s in ar){
+      //     console.log('for/in '+ s + ':' + ar[s]);
+      // }
+      // console.log('---------');
+      // for(let v of ar){
+      //     console.log('for/of '+ v);
+      // }
+
+      console.log("---------");
+
+      //   const ar1 = [1, 2, 3, 5];
+      //   const ar2 = [2, 4, 6];
+      //   ar3 = ar1.concat(ar2);
+      //   ar3.indexOf(2, [1]);
+      //   ar3.indexOf([-3]);
+      //   ar4 = ar3.pop();
+      //   ar3.splice(3, 0, [555]);
+
+      //   const ar = [2, 78, 4, 16, 8, 10];
+      //   ar.sort();
+      //   console.log(ar);
+      //   console.log("-----");
+
+      //   const ar2 =
+      //     "比跑步輕鬆但超抗老！每天15分鐘回春運動，身體年輕10歲！".split("");
+      //   ar2.sort();
+      //   console.log(ar2);
+      //   console.log("-----");
+
+      //   // 由大到小
+      //   ar.sort(function (a, b) {
+      //     console.log(a, b);
+      //     return b - a;
+      //   });
+      //   console.log(ar);
+      console.log("-----");
+
+      const people = [
+        { name: "David", age: 28 },
+        { name: "Carl", age: 25 },
+        { name: "Bill", age: 31 },
+      ];
+      people.sort(function (a, b) {
+        return a.age - b.age;
+      });
+      // console.log(people);
+      console.log(JSON.stringify(people));
+      // 將物件轉換成 string
+      console.log("-----");
+
+      people.sort(function (a, b) {
+        return b.name > a.name ? -1 : 1; // 名字排列
+      });
+      // console.log(people);
+      console.log(JSON.stringify(people));
+      console.log("-----");
+
+      const br = [35, 78, 6, 12, 54, 9];
+      //   cr = br.sort();
+      //   console.log(cr);
+      br.sort(function (a,b){
+          return a-b;
+      });
+      console.log(br);
+    </script>
+  </body>
+</html>

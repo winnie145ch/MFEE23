@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            transition: .5s;
+            float: left;
+        }
+
+        .trans1 {
+            background: lightcoral;
+        }
+
+        .trans1:hover {
+            transform: translate(50px, 20px);
+        }
+
+        .trans2 {
+            background: lightpink;
+        }
+
+        .trans2:hover {
+            transform: rotate(3600deg);
+        }
+
+        .trans3 {
+            background: lightcoral;
+        }
+
+        .trans3:hover {
+            transform: scale(2, 5);
+        }
+
+        .trans4 {
+            background: lightpink;
+        }
+
+        .trans4:hover {
+            transform: skew(20deg, 60deg);
+        }
+
+        .trans5 {
+            background: lightcoral;
+        }
+
+        .trans5:hover {
+            transform: translate(50px, 20px);
+        }
+
+        .trans6 {
+            background: lightpink;
+        }
+
+        .wrap:hover .trans6 {
+            transform: translate(100px, 100px) rotate(360deg);
+        }
+
+        .trans7 {
+            background: lightcoral;
+        }
+
+        .wrap:hover .trans7 {
+            transform: rotate(360deg) translate(100px, 100px);
+        }/* 動畫順序不同產生結果不同 */
+        .trans8 {
+            background: lightpink;
+        }
+
+        .wrap:hover .trans8 {
+            transform: matrix(2,30deg,60deg,2,50px,10px);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="box trans1"></div>
+    <div class="box trans2"></div>
+    <div class="box trans3"></div>
+    <div class="box trans4"></div>
+    <div class="box trans5"></div>
+
+    <div class="wrap">
+        <div class="box trans6"></div>
+        <div class="box trans7"></div>
+    </div>
+    <div class="box trans8"></div>
+    <div class="box trans9"></div>
+    <div class="box trans10"></div>
+
+</body>
+
+</html>

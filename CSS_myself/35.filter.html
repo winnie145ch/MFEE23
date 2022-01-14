@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        .filter {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .grayscale {
+            filter: grayscale(1);
+        }
+
+        .sepia {
+            filter: sepia(1);
+        }
+        .satnurate{
+            filter: saturate(0.5);
+        }
+        .hue-rotate{
+            filter:hue-rotate(90deg);
+        }
+        .invert{
+            filter:invert(1);
+        }
+        .opacity{
+            filter:opacity(.2);
+        }
+        .brightness{
+            filter:brightness(.5);
+        }
+        .contrast{
+            filter: contrast(2);
+        }
+        .blur{
+            filter:blur(3px);
+        }
+        .drop-shadow{
+            filter:drop-shadow(5px 5px 5px #333);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="filter">
+        <div class="box">
+            <img class="grayscale" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="sepia" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="satnurate" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="hue-rotate" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="invert" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="opacity" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="brightness" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="contrast" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="blur" src="./images/nook_small.jpg" alt="">
+        </div>
+        <div class="box">
+            <img class="drop-shadow" src="./images/nook_small.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

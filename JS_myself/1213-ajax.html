@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .rect {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #c2eaf4;
+            border: black 1px solid;
+        }
+        .ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #e92b55;
+            border: black 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="rect">
+    </div>
+    <button onclick="show()">convert</button>
+
+
+<script>
+    const rect = document.querySelector('.rect');
+    let data;
+
+    function createBall({x, y, size, color}) {
+        const b = document.createElement('div');
+        b.className = 'ball';
+        b.style.width = b.style.height = size  + 'px';
+        b.style.left = x - size/2 + 'px';
+        b.style.top = y -size/2 + 'px';
+        b.style.backgroundColor = color;
+        return b;
+    }
+
+    function show() {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            const str = xhr.responseText;
+            data = JSON.parse(str);
+
+            data.forEach( (o, i) => {
+                setTimeout(function(){
+                    rect.append(createBall(o));
+                }, 30*i)
+            });
+        }
+        xhr.open('GET', 'data.json');
+        xhr.send();
+
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=i, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="info"></div>
+<table>
+    <tr>
+        <td>1</td>
+        <td class="myclass">2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td class="myclass">5</td>
+        <td>6</td>
+    </tr>
+</table>
+
+<script>
+let s1 = '12',
+s2 = '34a',
+s3 = '6b7.8',
+s4 = 'cde';
+
+
+console.log( + s1);
+console.log( parseInt (s1));
+console.log( parseFloat (s1));
+console.log('-----------');
+console.log( + s2);
+console.log( parseInt (s2));
+console.log( parseFloat (s2));
+console.log('-----------')
+console.log( + s3);
+console.log( parseInt (s3));
+console.log( parseFloat (s3));
+console.log('-----------')
+console.log( + s4);
+console.log( parseInt (s4));
+console.log( parseFloat (s4));
+
+
+let name = 'Jonas';
+let str = `<h2>Lorem ipsum dolor sit amet, ${name}   consectetur adipisicing elit.</h2>
+<p> $ { 2+6}</p> `;
+document.querySelector('#info').innerHTML = str;
+
+let arti = "今晨8.1℃冷爆！9縣市低溫特報「不到10℃」 中南部日夜溫差達15℃";
+console.log (arti.length);
+console.log (arti.charAt(6));
+console.log (arti[6]);
+console.log ('-----------')
+console.log (arti.charCodeAt(6));
+console.log (String.fromCharCode(20919))
+console.log ('-----------')
+
+
+let td1 = document.querySelector('td');
+let td2 = document.querySelectorAll('td');
+let td3 = document.querySelector('.myclass');
+let td4 = document.querySelectorAll('myclass');
+console.log (td1);
+console.log (td2);
+console.log (td3);
+console.log (td4);
+
+</script>
+
+</body>
+</html>
