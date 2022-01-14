@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
+    />
+    <title>Ex02</title>
+    <style>
+      .wrap {
+        margin: 20px auto;
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box{
+          width: 100px;
+          height: 100px;
+
+      }
+      .box1, .box6, .box11, .box16{
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+      .box4, .box5, .box10, .box15{
+        background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      }
+      .box3, .box8, .box9, .box14{
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+      }
+      .box2, .box7, .box12, .box13{
+        background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="wrap">
+            <div class="box box1">box1</div>
+            <div class="box box2">box2</div>
+            <div class="box box3">box3</div>
+            <div class="box box4">box4</div>
+            <div class="box box5">box5</div>
+            <div class="box box6">box6</div>
+            <div class="box box7">box7</div>
+            <div class="box box8">box8</div>
+            <div class="box box9">box9</div>
+            <div class="box box10">box10</div>
+            <div class="box box11">box11</div>
+            <div class="box box12">box12</div>
+            <div class="box box13">box13</div>
+            <div class="box box14">box14</div>
+            <div class="box box15">box15</div>
+            <div class="box box16">box16</div>
+            
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('box').click(function(){
+            console.log($(this));
+            // $('box').css('backgroun','lightblue');
+        })
+    </script>
+  </body>
+</html>
