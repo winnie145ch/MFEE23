@@ -34,6 +34,9 @@
       .box2, .box7, .box12, .box13{
         background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
       }
+      .lightblue{
+        background: lightblue;
+      }
 
     </style>
   </head>
@@ -66,9 +69,11 @@
     <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('box').click(function(){
+        $('.box').click(function(){
             console.log($(this));
-            // $('box').css('backgroun','lightblue');
+            $(this).nextAll().addClass('lightblue');
+            $(this).removeClass('lightblue');
+            $(this).prevAll().removeClass('lightblue');
         })
     </script>
   </body>
