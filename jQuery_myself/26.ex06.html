@@ -62,14 +62,14 @@
         $("#area option").eq(0).siblings().removeClass("unShow");
 
         for(let i = 0; i < $('#area option').length; i++ ){
-            
+            $("#area option").eq(i).text(areaArray[$("#city").val()-1][i] + "區");
         }
 
         $("#area option").each(function (index, value) {
           //   console.log("index", index);
           //   console.log("value", $(value));
-         
-          $(value).text(areaArray[$("#city").val()-1][index] + "區");
+         console.log($("#city").val()-1);
+        //   $(value).text(areaArray[$("#city").val()-1][index] + "區");
         });
       });
     </script>
