@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
+    <title>Ex05</title>
+    <style>
+        .wrap{
+            max-width: 800px;
+            height: 600px;
+            overflow: hidden;
+            margin: 50px auto;
+            position: relative;
+        }
+        .img-wrap{
+            display: flex;
+            width: 4000px;
+            transition: 0.5s;
+            transform: translateX(0px);
+        }
+        li img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .dots{
+            position: absolute;
+            bottom: 0%;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .dots li{
+            width: 35px;
+            height: 10px;
+            border: 1px solid #fff;
+            margin: 10px;
+        }
+        .dots li:nth-child(1){
+            background: #fff;
+        }
+    </style>
+  </head>
+  <body>
+        <div class="wrap">
+            <ul class="list-unstyled img-wrap">
+                <li><img src="./img/image06.jpg" alt=""></li>
+                <li><img src="./img/image07.jpg" alt=""></li>
+                <li><img src="./img/image08.jpg" alt=""></li>
+                <li><img src="./img/image09.jpg" alt=""></li>
+                <li><img src="./img/image10.jpg" alt=""></li>
+            </ul>
+
+            <ul class="list-unstyled dots">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $('.dots li').hover(function(){
+            console.log('this',$(this).index());
+            $(this).css('background','#fff').siblings().css('background','transparent');
+            const moveX = $(this).index() * -800;
+            $(".img-wrap").css("transform", `translateX(${moveX}px)`);
+            
+        });
+    </script>
+  
+  </body>
+</html>
