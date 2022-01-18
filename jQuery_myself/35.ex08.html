@@ -61,20 +61,21 @@
     <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('#btnRight').click(function(){
-                if($('.box').css('left') <= $('body').css('width')){
+      let right = floor($('body').css('width')/$('.box').css('left'));
+        $('#btnRight').click(function setRight(){
+                if($('.box').css('left') < $('.box').css('left')*right){
                     $('.box').css('left','+=50px');
                 } else {
-                    $('.box').css('left') == $('body').css('width')-'50px';
+                  $('#btnRight').off('click',setRight)
                 }
                 console.log($('body').css('width'));
                 console.log($('.box').css('left'));
         })
-        // $(document).keyboard(function(){
-        //     if(event.which == 39){
-        //         $('.box').css('left','+=50px');
-        //     }
-        // })
+        $(document).on('keydown',function(){
+            if(event.which == 39){
+                $('.box').css('left','+=50px');
+            }
+        })
     </script>
   </body>
 </html>
