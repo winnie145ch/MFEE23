@@ -16,6 +16,10 @@
         <button class="btn btn-primary" id="on2">on2</button>
         <button class="btn btn-warning" id="off2">off2</button>
 
+        <button class="btn btn-success" id="hi3">hello3</button>
+        <button class="btn btn-danger" id="on3">on3</button>
+        <button class="btn btn-warning" id="off3">off3</button>
+
 
 
     <script src="./js/jquery-3.6.0.min.js"></script>
@@ -43,6 +47,13 @@
             $('#hi2').off('click',sayHi);
         })
         // 解決重複綁定的問題  
+
+        $('#on3').one('click',function(){
+            $('#hi3').click(sayHi);
+        })
+        $('#off3').click(function(){
+            $('#hi3').off('click',sayHi);
+        })
     </script>
   
   </body>
