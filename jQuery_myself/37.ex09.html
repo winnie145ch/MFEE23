@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
+    />
+    <title>Ex09</title>
+    <style>
+      .fontS {
+        font-size: 0.8rem;
+      }
+      .fontM {
+        font-size: 1.5rem;
+      }
+      .fontL {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-end">
+        <div class="btn-group">
+          <div class="btn btn-info">S</div>
+          <div class="btn btn-info active">M</div>
+          <div class="btn btn-info">L</div>
+        </div>
+      </div>
+      <h2>jQuery</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nobis
+        placeat soluta tempora eaque voluptas quasi quidem, velit inventore iste
+        adipisci magni est nemo deserunt dolorum perspiciatis totam vel
+        consectetur?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non odio
+        similique perspiciatis sapiente, quos ullam incidunt! Laborum
+        voluptatum, placeat deleniti veritatis sed numquam dolorem eligendi
+        veniam ducimus, eveniet quam labore.
+      </p>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $(".btn").click(function () {
+        console.log($(this));
+        if($(this).is(":contains('S')")){
+            console.log('this is S');
+            $('p').removeClass();
+            $('p').addClass('fontS');
+            $('.btn').removeClass('active');
+            $(this).addClass('active');
+        }
+        if($(this).is(":contains('M')")){
+            console.log('this is M');
+            $('p').removeClass();
+            $('p').addClass('fontM');
+            $('.btn').removeClass('active');
+            $(this).addClass('active');
+        }
+        if($(this).is(":contains('L')")){
+            console.log('this is L');
+            $('p').addClass('fontL');
+            $('.btn').removeClass('active');
+            $(this).addClass('active');
+        }
+      });
+    </script>
+  </body>
+</html>
