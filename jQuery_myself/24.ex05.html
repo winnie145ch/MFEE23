@@ -4,24 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
     <title>Ex05</title>
     <style>
         .wrap{
-            max-width: 800px;
-            height: 600px;
+            max-width: 1200px;
+            height: 800px;
             overflow: hidden;
             margin: 50px auto;
             position: relative;
         }
         .img-wrap{
             display: flex;
-            width: 4000px;
+            width: 6000px;
             transition: 0.5s;
             transform: translateX(0px);
         }
         li img{
-            width: 100%;
+            width: 1200px;
             height: 100%;
             object-fit: cover;
         }
@@ -41,6 +42,35 @@
         .dots li:nth-child(1){
             background: #fff;
         }
+        .left-area{
+            width: 10%;
+            /* background-color: rgb(250, 235, 215,.5); */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .right-area{
+            width: 10%;
+            /* background-color: rgb(250, 235, 215,.5); */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        i{
+            color: white;
+            font-size: 1.5rem;
+        }
+        
     </style>
   </head>
   <body>
@@ -60,6 +90,12 @@
                 <li></li>
                 <li></li>
             </ul>
+            <div class="left-area">
+                <i class="fas fa-chevron-left" id="left"></i>
+            </div>
+            <div class="right-area">
+                <i class="fas fa-chevron-right" id="right"></i>
+            </div>
         </div>
 
 
@@ -71,10 +107,13 @@
         $('.dots li').hover(function(){
             console.log('this',$(this).index());
             $(this).css('background','#fff').siblings().css('background','transparent');
-            const moveX = $(this).index() * -800;
+            const moveX = $(this).index() * -1200;
             $(".img-wrap").css("transform", `translateX(${moveX}px)`);
             
         });
+        $('left-area').hover(function(){
+            $()
+        })
     </script>
   
   </body>

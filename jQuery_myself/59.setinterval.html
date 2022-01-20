@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>stop1</button>
+    <button>stop2</button>
+    <button>start1</button>
+    <button>start2</button>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script></script>
+    <script>
+      let index = 0;
+      let isPause = false;
+      let myInterval1 = null;
+      let myInterval2 = null;
+
+      $("button")
+        .eq(0)
+        .click(function () {
+          console.log("stop1");
+          console.log("clear1 myInterval", myInterval1);
+          clearInterval(myInterval1);
+        });
+
+      $("button")
+        .eq(1)
+        .click(function () {
+          console.log("stop2");
+          console.log("clear2 myInterval", myInterval2);
+          clearInterval(myInterval2);
+        });
+
+      $("button")
+        .eq(2)
+        .click(function () {
+          console.log("start1");
+          myInterval1 = setInterval(() => {
+            console.log("doing myInterval1");
+          }, 1000);
+          console.log("start1 myInterval", myInterval1);
+        });
+
+      $("button")
+        .eq(3)
+        .click(function () {
+          console.log("start2");
+          myInterval2 = setInterval(() => {
+            console.log("doing myInterval2");
+          }, 1000);
+          console.log("start2 myInterval", myInterval2);
+        });
+    </script>
+  </body>
+</html>
