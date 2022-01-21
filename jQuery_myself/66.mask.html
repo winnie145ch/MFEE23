@@ -14,21 +14,23 @@
     />
     <title>Mask</title>
     <style>
+      .body{
+        position: relative;
+      }
       .nav-icon {
         color: black;
       }
-      .inner-heart {
-        color: salmon;
-        position: relative;
-        z-index:10;
+      .nav-01{
+        padding: 8px 0;
       }
+
     </style>
   </head>
   <body>
     <div class="container">
       <ul class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link" href="#"
+          <a class="nav-link nav01" href="#"
             ><i class="fas fa-heart nav-icon nav-heart"></i
           ></a>
         </li>
@@ -73,29 +75,29 @@
         });
         $(".row").html(html);
       }
-
-      function flyHeart() {}
+      
 
       $(".row").on("click", ".heart", function () {
         console.log(1);
-        $(this)
-          .parent()
-          .prepend(
-            '<i class="fas fa-heart inner-heart"></i>'
+
+        const btn = $(this);
+        const start = $(this).offset();
+        const end = $(".nav-heart").offset();
+
+        $('body')
+          .append(
+            '<div class="flying"><i class="fas fa-heart inner-heart"></i></div>'
           );
-        console.log(
-          $(".inner-heart").offset().left,
-          $(".inner-heart").offset().top
-        );
 
-        const left =
-          $(".nav-heart").offset().left - $(this).offset().left+16;
-        const top =
-          $(".nav-heart").offset().top - $(this).offset().top;
-        $(".inner-heart")
-          .animate({ left: left + "px", top: top + "px", opacity: "1" }, 1000)
-
-          .fadeOut("slow");
+        $('.flying').css({width:btn.outerWidth(),height:btn.outerHeight(),top:start.top + 'px',left:start.left + 'px',position:"absolute",color: "salmon",display:"flex",justifyContent:"center",alignItems:"center"});
+      
+        $(".flying")
+          .animate({ left: end.left + "px", top: end.top + 20 +"px", opacity: "1" }, 1000)
+          .animate({left: end.left + "px", top: end.top -10 +"px", opacity: ".5" },500)
+          .fadeOut("slow"),
+            function () {
+              $(this).remove();
+            };
       });
 
     //   $(".test-heart").click(function () {
