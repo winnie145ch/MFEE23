@@ -136,15 +136,18 @@
         let v = 1;
         const dot = $('.dots li');
         $('.right-area').click(function () {
-            if(v<6){
+            if(v<5){
                 const moveX = v * -1200;
                 $(".img-wrap").css("transform", `translateX(${moveX}px)`);
                 dot.eq(v).css('background', '#fff').siblings().css('background', 'transparent');
                 v++;
-            }else if(v=6){
+            }else if(v=5){
                 // $('.img-right').removeClass('d-none');
                 // $('.img-right').attr('src','./img/image06.jpg')
-                v=v-5;
+                const moveX = v * -1200;
+                $(".img-wrap").css("transform", `translateX(${moveX}px)`);
+
+                v=v-4;
 
                 // dot.eq(0).css('background', '#fff').siblings().css('background', 'transparent');
             }
@@ -153,25 +156,7 @@
             // $(".img-wrap").css("transform", `translateX(${moveX}px)`);
 
         })
-        // $('.left-area').click(function () {
-        //     if(v<6){
-        //         const moveX = v;
-        //         $(".img-wrap").css("transform", `translateX(${moveX}px)`);
-        //         dot.eq(v).css('background', '#fff').siblings().css('background', 'transparent');
-        //         v--;
-        //     }else if(v=6){
-        //         // $('.img-right').removeClass('d-none');
-        //         // $('.img-right').attr('src','./img/image06.jpg')
-        //         v=v-5;
-
-        //         // dot.eq(0).css('background', '#fff').siblings().css('background', 'transparent');
-        //     }
-        //     console.log(v);
-
-        //     // $(".img-wrap").css("transform", `translateX(${moveX}px)`);
-
-        // })
-
+        
     </script>
 
 </body>
