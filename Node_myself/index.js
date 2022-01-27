@@ -16,10 +16,27 @@ app.get('/a.html', (req, res)=>{
 });
 */
 
+
 app.use(express.static('public'));
 
-app.get('/', cors(), (req, res) =>{
+app.get('/', (req, res) =>{
   res.render('home',{name:'Winnie'});
+});
+
+app.get('/json-sales',(req, res) => {
+  const sales = require('./data/sales');
+  // 變成array
+  console.log(sales);
+  res.render('json-sales',{sales});
+});
+
+app.get('/try-qs',(req,res)=>{
+  res.json(req.query);
+});
+
+const urlencodeParser = express.urlencoded({extended: false});
+app.post('/try-post', urlencodeParser, (req,res) => {
+  res.json(req.body);
 });
 
 // ********** 所有路由的後面
