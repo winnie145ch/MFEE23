@@ -4,8 +4,9 @@ require ('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const upload = multer({dest:'tmp_uploads/'});
-// 呼叫multer 和設定暫存目的
+// const upload = multer({dest:'tmp_uploads/'});
+// 呼叫 multer 和設定暫存目的
+const upload = require(__dirname + '/modules/upload-imgs');
 const fs = require('fs').promises;
 
 const app = express();
@@ -55,7 +56,7 @@ app.post('/try-post-form', (req, res)=>{
 app.post('/try-upload', upload.single('avatar'), async(req,res)=>{
   // res.json(req.body);
   // res.json(req.file);
-  const types = ['image/jpeg', 'image/png'];
+  /*const types = ['image/jpeg', 'image/png'];
   const f = req.file;
   if( f && f.originalname){
     console.log(1);
@@ -64,8 +65,19 @@ app.post('/try-upload', upload.single('avatar'), async(req,res)=>{
       await fs.rename(f.path, __dirname +'/public/img/' + f.originalname);
       return res.redirect('/img/'+f.originalname);
     }
+  }else{
+    return res.send('檔案類型不符合');
   }
   res.send('bad');
+  */
+});
+
+app.post('/try-uploads',upload.array('photos'),async(req,res)=>{
+  const result = req.files.map(({mimetype,filename,size})=>{
+    // 用()包住展開來的物件，才會視為3個東西
+    return(mimtype,filename,size);
+  })
+  res.json(result);
 });
 
 // ********** 所有路由的後面
