@@ -1,4 +1,4 @@
-console.log(process.env.NODE_ENV);
+git console.log(process.env.NODE_ENV);
 
 require ('dotenv').config();
 const express = require('express');
