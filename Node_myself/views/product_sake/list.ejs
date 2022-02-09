@@ -1,0 +1,65 @@
+<%- include('../parts/html-header') %> 
+<%- include('../parts/navbar') %> 
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item <%= page===1 ? 'disabled' : '' %>">
+                      <a class="page-link" href="?<%- new URLSearchParams({...conditions, page: page-1}) %>">Previous</a>
+                    </li>
+                  <% for(let i=1; i<= totalPages; i++){ %>
+                  <li class="page-item <%= page===i ? 'active' : '' %>">
+                      <a class="page-link" href="?<%- new URLSearchParams({...conditions, page: i}) %>"><%= i %></a>
+                    </li>
+                  <% } %>
+                  <li class="page-item <%= page===totalPages ? 'disabled' : '' %>">
+                      <a class="page-link" href="?<%- new URLSearchParams({...conditions, page: page+1}) %>">Next</a>
+                    </li>
+                </ul>
+              </nav> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">商品名稱</th>
+                    <th scope="col">庫存</th>
+                    <th scope="col">銷售量</th>
+                    <th scope="col">商品介紹</th>
+                    <th scope="col">商品狀態</th>
+                    <th scope="col">對應規格id</th>
+                    <th scope="col">圖片</th>
+                    <th scope="col">上架時間</th>
+                    <th scope="col">下架時間</th>
+                </thead>
+                <tbody>
+                    <% for(let i of rows){ %>
+                        <tr>
+                            <td><%= i.pro_id %></td>
+                            <td><%= i.pro_name %></td>
+                            <td><%= i.pro_stock %></td>
+                            <td><%= i.pro_selling %></td>
+                            <td><%= i.pro_intro %></td>
+                            <td><%= i.pro_condition %></td>
+                            <td><%= i.format_id %></td>
+                            <td><%= i.pro_img %></td>
+                            <td><%= i.pro_creat_time %></td>
+                            <td><%= i.pro_unsell_time %></td>
+                        </tr>
+                        <% } %>  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include('../parts/scripts') %>
+<script>
+    const locals = <%- JSON.stringify(locals) %>;
+</script> 
+<%- include('../parts/html-footer') %>

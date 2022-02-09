@@ -1,0 +1,73 @@
+<%- include('../parts/html-header') %> 
+<%- include('../parts/navbar') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">新增資料</h5>
+          <form name="form1" onsubmit="checkForm(); return false;">
+            <div class="mb-3">
+              <label for="pro_name" class="form-label">商品名稱</label>
+              <input type="text" class="form-control" id="pro_name" name="pro_name" />
+            </div>
+            <div class="mb-3">
+              <label for="stock" class="form-label">庫存</label>
+              <input type="number" class="form-control" id="stock" name="stock" />
+            </div>
+            <div class="mb-3">
+              <label for="pro_selling" class="form-label">銷售量</label>
+              <input
+                type="number"
+                class="form-control"
+                id="pro_selling"
+                name="pro_selling"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="pro_intro" class="form-label">商品介紹</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pro_intro"
+                name="pro_intro"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="pro_condition" class="form-label">銷售狀態</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pro_condition"
+                name="pro_condition"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="format_id" class="form-label">對應規格id</label>
+              <input
+                type="number"
+                class="form-control"
+                id="format_id"
+                name="format_id"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="pro_img" class="form-label">圖片</label>
+              <input
+                type="text"
+                class="form-control"
+                id="pro_img"
+                name="pro_img"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../parts/scripts') %>
+<%- include('../parts/html') %> 
