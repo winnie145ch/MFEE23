@@ -1,4 +1,4 @@
-<%- include('../parts/html-header') %> 
+<%- include('../parts/html_header') %> 
 <%- include('../parts/navbar') %> 
 
 <div class="container">
@@ -26,6 +26,7 @@
         <div class="col">
             <table class="table table-striped table-bordered">
                 <thead>
+                    <th scope="col">刪除</th>
                     <th scope="col">#</th>
                     <th scope="col">商品名稱</th>
                     <th scope="col">庫存</th>
@@ -36,10 +37,12 @@
                     <th scope="col">圖片</th>
                     <th scope="col">上架時間</th>
                     <th scope="col">下架時間</th>
+                    <th scope="col">修改</th>
                 </thead>
                 <tbody>
                     <% for(let i of rows){ %>
                         <tr>
+                            <td><a href="/product_sake/delete/<%= i.pro_id %>"><i class="fas fa-trash-alt"></i></a></td>
                             <td><%= i.pro_id %></td>
                             <td><%= i.pro_name %></td>
                             <td><%= i.pro_stock %></td>
@@ -50,6 +53,7 @@
                             <td><%= i.pro_img %></td>
                             <td><%= i.pro_creat_time %></td>
                             <td><%= i.pro_unsell_time %></td>
+                            <td><a href="/product_sake/edit/<%= i.pro_id %>"><i class="fas fa-edit"></i></a></td>
                         </tr>
                         <% } %>  
                 </tbody>
@@ -58,8 +62,8 @@
     </div>
 </div>
 
-<%- include('../parts/scripts') %>
+<%- include('../parts/script') %>
 <script>
     const locals = <%- JSON.stringify(locals) %>;
 </script> 
-<%- include('../parts/html-footer') %>
+<%- include('../parts/html_footer') %>

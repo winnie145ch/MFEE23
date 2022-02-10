@@ -2,13 +2,17 @@ console.log(process.env.NODE_ENV);
 
 require ('dotenv').config();
 const express = require('express');
+const session = require('express-session');
+const MysqlStore = require('express-mysql-session')(session);
+const moment = require('moment-timezone');
 const cors = require('cors');
 const multer = require('multer');
 // const upload = multer({dest:'tmp_uploads/'});
 // 呼叫 multer 和設定暫存目的
 const upload = require(__dirname + '/modules/upload-imgs');
 const fs = require('fs').promises;
-
+const db = require('./modules/connect-db');
+const sessionStore = new MysqlStore({},db);
 const app = express();
 
 app.set('view engine','ejs');
@@ -25,17 +29,32 @@ app.get('/a.html', (req, res)=>{
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static('public'));
+app.use('/joi',express.static('node_modules/joi/dist/'));
+
+app.use(session({
+  saveUninitialized: false,
+  resave: false,
+  secret: 'sdkfkdh984576894kjdkgjhdfkkjdfgjkfjsdfjhskAAAkdfjdsf',
+  store: sessionStore,
+  cookie: {
+      maxAge: 1200000
+  }
+}));
 
 // 自訂middleware
 app.use((req, res, next) =>{
   res.locals.hi = 'hello world ヾ(•ω•`) ';
   // res.send('blablabla');
   // 回應後，不會往下一個路由規則
+
+  // template helper functions 樣版輔助函式
+  res.locals.toDateString = d => moment(d).format('YYYY-MM-DD');
+  res.locals.toDatetimeString = d => moment(d).format('YYYY-MM-DD HH:mm:ss');
   next();
 });
 
 app.get('/', (req, res) =>{
-  res.render('home',{name:'Winnie'});
+  res.render('home',{name:'root'});
 });
 
 app.get('/json-sales',(req, res) => {
@@ -83,7 +102,7 @@ app.post('/try-upload', upload.single('avatar'), async(req,res)=>{
 app.post('/try-uploads',upload.array('photos'),async(req,res)=>{
   const result = req.files.map(({mimetype,filename,size})=>{
     // 用()包住展開來的物件，才會視為3個東西
-    return(mimtype,filename,size);
+    return{mimtype,filename,size};
   })
   res.json(result);
 });
@@ -109,7 +128,32 @@ app.get(/^\/m\/09\d{2}-?\d{3}-?\d{3}$/i,(rep, res)=>{
 });
 
 app.use('/admin2',require('./routes/admin2'));
+app.use('/product_sake',require('./routes/product_sake'));
 
+app.get('/try-session', (req, res)=>{
+  req.session.my_var = req.session.my_var || 0;
+  req.session.my_var++;
+  res.json(req.session);
+});
+
+app.get('/try-moment', (req, res)=>{
+  const fm = 'YYYY-MM-DD HH:mm:ss';
+  res.json({
+      mo1: moment().format(fm),
+      mo2: moment().tz('Europe/London').format(fm),
+      mo3: moment(req.session.cookie.expires).format(fm),
+      mo4: moment(req.session.cookie.expires).tz('Europe/London').format(fm),
+  });
+});
+
+app.get('/try-db', async (req, res)=>{
+  const sql = "SELECT * FROM product_sake LIMIT 5";
+
+  const [rs, fields] = await db.query(sql);
+
+  res.json(rs);
+
+});
 // ********** 所有路由的後面
 app.use((req, res)=>{
   res.status(404).send(`<h2>走錯路了</h2>`);

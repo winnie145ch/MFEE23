@@ -10,11 +10,11 @@
           <form name="form1" onsubmit="checkForm(); return false;">
             <div class="mb-3">
               <label for="pro_name" class="form-label">商品名稱</label>
-              <input type="text" class="form-control" id="pro_name" name="pro_name" />
+              <input type="text" class="form-control" id="pro_name" name="pro_name" value="<%=pro_name %>"/>
             </div>
             <div class="mb-3">
               <label for="pro_stock" class="form-label">庫存</label>
-              <input type="number" class="form-control" id="pro_stock" name="pro_stock" />
+              <input type="number" class="form-control" id="pro_stock" name="pro_stock" value="<%=pro_stock %>"/>
             </div>
             <div class="mb-3">
               <label for="pro_selling" class="form-label">銷售量</label>
@@ -22,7 +22,7 @@
                 type="number"
                 class="form-control"
                 id="pro_selling"
-                name="pro_selling"
+                name="pro_selling" value="<%=pro_selling %>"
               />
             </div>
             <div class="mb-3">
@@ -31,7 +31,7 @@
                 type="text"
                 class="form-control"
                 id="pro_intro"
-                name="pro_intro"
+                name="pro_intro" value="<%=pro_intro %>"
               />
             </div>
             <div class="mb-3">
@@ -40,7 +40,7 @@
                 type="text"
                 class="form-control"
                 id="pro_condition"
-                name="pro_condition"
+                name="pro_condition" value="<%=pro_condition %>"
               />
             </div>
             <div class="mb-3">
@@ -49,7 +49,7 @@
                 type="number"
                 class="form-control"
                 id="format_id"
-                name="format_id"
+                name="format_id" value="<%=format_id %>"
               />
             </div>
             <div class="mb-3">
@@ -58,7 +58,7 @@
                 type="text"
                 class="form-control"
                 id="pro_img"
-                name="pro_img"
+                name="pro_img" value="<%=pro_img %>"
               />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -74,26 +74,12 @@
   // 資料檢查
   function checkForm(){
     const fd = new FormData(document.form1);
-    console.log([...fd]);
-    const usp = new URLSearchParams(fd);
-    // console.log([...usp]);
     const dataObj = {};
     for(let i of fd){
       dataObj[i[0]] = i[1];
     }
-    console.log({dataObj});
-     // TODO: 檢查資料格式
-      /*
-      fetch('/product_sake/add2', {
-        method: 'POST',
-        body: fd,
-      }).then(r=>r.json())
-      .then(obj=>{
-        console.log(obj);
-      });
-      */
+    
      fetch('',{
-      // path 相同所以放 ''
       method:'POST',
       body:JSON.stringify(dataObj),
       headers:{
@@ -102,19 +88,10 @@
      }).then(r => r.json())
      .then(obj =>{
        console.log(obj);
+       if(!obj.success){
+           alert('資料沒有改變')
+       }
      });
   }
-
-
-// 測試joi
-  // const Joi = joi;
-  // const schema = Joi.object({
-  //   pro_name:Joi.string().alphanum().min(6).max(20).require(),
-  //   pro_stock:Joi.number().required(),
-  //   pro_selling:Joi.number().required()
-  // });
-  // console.log( schema.validate({Pro_name:'asdgfgjk',pro_stock:'cv'}));
-  // console.log( schema.validate({Pro_name:'asdgfgjk',pro_stock:'cv'},{abortEarly: false}));
-  // console.log( schema.validate({Pro_name:'asdgfgjk',pro_stock:'23'}));
 </script>
 <%- include('../parts/html_footer') %> 
