@@ -14,6 +14,7 @@ const fs = require('fs').promises;
 const db = require('./modules/connect-db');
 const sessionStore = new MysqlStore({},db);
 const app = express();
+const fetch = require('node-fetch');
 
 app.set('view engine','ejs');
 
@@ -26,6 +27,14 @@ app.get('/a.html', (req, res)=>{
 */
 
 // top middleware
+const corsOptions = {
+  credentials: true,
+  origin: function(origin, cb){
+      console.log({origin});
+      cb(null, true);
+  }
+};
+app.use(cors(corsOptions));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.static('public'));
@@ -154,6 +163,14 @@ app.get('/try-db', async (req, res)=>{
   res.json(rs);
 
 });
+
+app.get('/yahoo', async (req, res)=>{
+  fetch('http://tw.yahoo.com/')
+  .then(r => r.text())
+  .then(txt =>{
+    res.send(txt);
+  });
+})
 // ********** 所有路由的後面
 app.use((req, res)=>{
   res.status(404).send(`<h2>走錯路了</h2>`);
