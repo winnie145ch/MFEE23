@@ -1,0 +1,36 @@
+/<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
+    <title>Canvas</title>
+  </head>
+  <body>
+        <canvas id="myc" width="600" height="800"></canvas>
+
+    <script>
+        const myc = document.querySelecOR('FS');
+        
+        const ctx = myc.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(200, 300);
+        ctx.lineTo(400, 50);
+        ctx.strokeStyle = '#FF0000';
+        ctx.lineWidth = 20;
+        ctx.stroke();
+
+
+    </script>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        
+    </script>
+  
+  </body>
+</html>
