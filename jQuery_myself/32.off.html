@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
+    <title>off</title>
+  </head>
+  <body>
+        <button class="btn btn-success" id="hi">hello</button>
+        <button class="btn btn-success" id="on">on</button>
+        <button class="btn btn-secondary" id="off">off</button>
+
+        <button class="btn btn-primary" id="hi2">hello2</button>
+        <button class="btn btn-primary" id="on2">on2</button>
+        <button class="btn btn-warning" id="off2">off2</button>
+
+        <button class="btn btn-success" id="hi3">hello3</button>
+        <button class="btn btn-danger" id="on3">on3</button>
+        <button class="btn btn-warning" id="off3">off3</button>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function sayHi (){
+            console.log('ヾ(•ω•`) ~ Hello');
+        };
+        
+        $('#on').on('click',function(){
+            $('#hi').click(sayHi);
+        });
+        //  將事件綁定在別人身上，會有重複綁定的現象產生
+        $('#off').click(function(){
+            $('#hi').off('click',sayHi);
+        })
+        // off可以一次解除
+
+        $('#on2').on('click',function setHi(){
+            $('#hi2').click(sayHi);
+            $('#on2').off('click',setHi);
+        });  
+        $('#off2').click(function(){
+            $('#hi2').off('click',sayHi);
+        })
+        // 解決重複綁定的問題  
+
+        $('#on3').one('click',function(){
+            $('#hi3').click(sayHi);
+        })
+        $('#off3').click(function(){
+            $('#hi3').off('click',sayHi);
+        })
+    </script>
+  
+  </body>
+</html>

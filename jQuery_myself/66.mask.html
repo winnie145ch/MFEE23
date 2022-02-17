@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Mask</title>
+    <style>
+      .body{
+        position: relative;
+      }
+      .nav-icon {
+        color: black;
+      }
+      .nav-01{
+        padding: 8px 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link nav01" href="#"
+            ><i class="fas fa-heart nav-icon nav-heart"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"
+            ><i class="fas fa-shopping-cart nav-icon"></i
+          ></a>
+        </li>
+      </ul>
+      <!-- <div><i class="fas fa-heart test-heart"></i></div> -->
+      <div class="row"></div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $.ajax({
+        method: "GET",
+        url: "./data/mask.json",
+        dataType: "json",
+      }).done(function (result) {
+        console.log(result);
+        render(result);
+      });
+      function render(data) {
+        let html = "";
+        data.forEach((element) => {
+          html += `<div class="mt-5 col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="./imgs/${element.image}" alt="">
+                        <div class="card-body">
+                            <h5>${element.name}</h5>
+                            <p class="myPrice">$${element.price}</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                            <button class="btn btn-primary mr-2 heart"><i class="fas fa-heart"></i></button>
+                            <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i></button>    
+                        </div>
+                    </div>
+                </div>`;
+        });
+        $(".row").html(html);
+      }
+      
+
+      $(".row").on("click", ".heart", function () {
+        console.log(1);
+
+        const btn = $(this);
+        const start = $(this).offset();
+        const end = $(".nav-heart").offset();
+
+        $('body')
+          .append(
+            '<div class="flying"><i class="fas fa-heart inner-heart"></i></div>'
+          );
+
+        $('.flying').css({width:btn.outerWidth(),height:btn.outerHeight(),top:start.top + 'px',left:start.left + 'px',position:"absolute",color: "salmon",display:"flex",justifyContent:"center",alignItems:"center"});
+      
+        $(".flying")
+          .animate({ left: end.left + "px", top: end.top + 20 +"px", opacity: "1" }, 1000)
+          .animate({left: end.left + "px", top: end.top -10 +"px", opacity: ".5" },500)
+          .fadeOut("slow"),
+            function () {
+              $(this).remove();
+            };
+      });
+
+    //   $(".test-heart").click(function () {
+    //     console.log(2);
+    //     console.log($(".nav-heart").offset().left);
+    //     console.log($(".nav-heart").offset().top);
+    //     const left =
+    //       $(".nav-heart").offset().left - $(".test-heart").offset().left;
+    //     const top =
+    //       $(".nav-heart").offset().top - $(".test-heart").offset().top;
+    //     $(this)
+    //       .animate({ left: left + "px", top: top + "px", opacity: "1" }, 500)
+
+    //       .fadeOut("slow");
+    //   });
+    </script>
+  </body>
+</html>

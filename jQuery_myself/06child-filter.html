@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
+    <title>child-filter</title>
+    <style>
+        .wrap{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(248, 224, 193);
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .box{
+            width: 75px;
+            height: 75px;
+            outline: 1px solid rgb(65, 116, 113);
+        }
+    </style>
+  </head>
+  <body>
+        <div class="wrap">
+            <p>123</p>
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+            <div class="box">box4</div>
+            <div class="box">box5</div>
+            <p>456</p>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+            <div class="box">box8</div>
+            <p>789</p>
+            <div class="box">box9</div>
+            <div class="box">box10</div>
+            <div class="box">box11</div>
+            <div class="box">box12</div>
+        </div>
+        <div class="wrap">
+            <div class="box">box13</div>
+        </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        //box13
+        // $('.box:first-child').css('background','lightblue');
+
+        // box12 box13
+        // $('.box:last-child').css('background','lightpink');
+
+        // box1 box13
+        $('.box:first-of-type').css('background','lightyellow');
+        
+        // wrap(first) box13
+        $('div:nth-child(1)').css('background','lightcyan')
+
+        // p123
+        // $('p:first-of-type').css('background','lightyellow');
+        
+        $('p:nth-child(2)').css('background','lightgreen');
+
+        // box8
+        // $('.box:nth-child(10)').css('background','lightgreen');
+
+        //<p>456</p>
+        // $('p:nth-of-type(2)').css('background','lightgreen');
+        // $('.wrap :nth-child(7)').css('background','lightsalmon');
+       
+        // box1 wrap(second) 
+        // $('div:nth-child(2)').css('background','lightseagreen')
+
+        // p123 box13
+        // $('div :nth-child(1)').css('background','gray')
+
+        // box13
+        $('div:only-child').css('background','lightsalmon')
+
+        $('div:only-type-of').css('background','lightseagreen')
+    </script>
+  
+  </body>
+</html>

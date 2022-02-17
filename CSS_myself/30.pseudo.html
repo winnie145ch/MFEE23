@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo</title>
+    <style>
+        .price::before {
+            content: "$";
+        }
+
+        .price::after {
+            content: "dollar";
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: steelblue;
+            position: relative;
+            margin: 10px;
+        }
+        .box::before{
+            content: "Discount xx %";
+            width: 100px;
+            height: 30px;
+            color: #fff;
+            background: tomato;
+            border:1px solid tomato;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="price">550</h1>
+    <div class="price">
+        blablabla
+        <p>blablabla</p>
+        <p>blablabla</p>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+
+</html>

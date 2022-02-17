@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
+    />
+    <title>classname</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: salmon;
+        transition: 0.5s;
+      }
+      .style {
+        background-color: sandybrown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <button class="btn btn-primary" id="add">Add Classname</button>
+    <button class="btn btn-primary" id="remove">Remove Classname</button>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      $("#add").click(function () {
+        $(".box").addClass("style");
+      });
+      $("#remove").click(function () {
+        $(".box").removeClass("style");
+      });
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for element</title>
+    <style>
+        .rect{
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: rgb(188, 222, 243);
+        }
+        .ball{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 60px;
+            background-color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="rect"></div>
+
+    <script>
+        const rect = document.querySelector('.rect');
+
+        // let b, i;
+        // for(i=0 ; i<10; i++){
+        //     b = document.createElement('div');
+        //     b.className = 'ball';
+        //     b.innerHTML = i+1 ;
+        //     b.style.left = (i*50+70)+'px';
+        //     b.style.top = (i*50+70)+'px';
+        //     rect.appendChild(b);
+        // }
+
+        // let b, i, j, n=1;
+        // for(k=0; k<6; k++){
+        //     for(i=0; i<10; i++,n++){
+        //         b = document.createElement('div');
+        //         b.className = 'ball';
+        //         b.innerHTML = n;
+        //         b.style.top = (i*60+50)+'px';
+        //         b.style.left = (k*60+60)+'px';
+        //         rect.appendChild(b);
+        //     }
+        // }
+
+        let x ,y ,i;
+        for(i=0 ; i<16 ; i++ ){
+            x = i % 4;
+            y = Math.floor(i / 4);
+            rect.innerHTML += `(${x},${y}),    `;
+           }
+    </script>
+</body>
+</html>

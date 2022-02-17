@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="reset.css">
+    <!-- 簡易消除瀏覽器的預設值 -->
+    <style>
+        body{
+            margin: 0;
+        }
+        .wrap{
+            width: 960px;
+            margin: 0 auto;
+            border: 1px solid #bbb;
+        }
+        header{
+            height: 100px;
+            background-color: cadetblue;
+        }
+        li{
+            display: inline-block;
+            border: 1px solid #666;
+            margin-right: -4px;
+            /* ↑消除inline-block預設的 4px(右和下) */
+        }
+/* Section--------------------------------------------------- */
+        section{
+            width: 70%;
+            background-color: darksalmon;
+            float: left;
+            /* 不用 float 的另一種寫法 */
+            /* display: inline-block; */
+            /* ※但 inline-block 要考慮預設的 4px，並且 inline-block預設對齊下面、左邊*/
+        }
+/* aside----------------------------------------------------- */
+        aside{
+            width:30%;
+            height: 250px;
+            background-color: rgb(131, 224, 255);
+            float: right;
+            /* 不用 float 的另一種寫法 */
+            /* display: inline-block; */
+        }
+/* footer---------------------------------------------------- */
+        footer{
+            clear: both;
+            /* 不用 float 的另一種寫法 */
+            /*將 clear 註解掉 */
+            height: 50px;
+            background-color: lightpink;
+            line-height: 50px;
+            /* ↑有設 height時，可以直接用 line-height置中對齊 */
+        }
+    </style>
+</head>
+<body>
+    <!-- (header>(h1{公司名稱}+nar>ul>li{Item}*5))+section+aside+footer -->
+    <div class="wrap">
+        <header>
+            <h1>公司名稱</h1>
+            <nar>
+                <ul>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                    <li>Item</li>
+                </ul>
+            </nar>
+        </header>
+        <section>
+            <article>
+                <h2>我是大標題</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore deserunt quo eos consequatur, officiis tempore fuga magni doloribus cum libero suscipit soluta repudiandae impedit, quaerat expedita et quos enim porro.</p>
+                <figure>
+                    <img src="600x400/Blue-Flower-with-Sharp-Thorns-600x400.jpg" alt="">
+                    <figcaption>blue folwer</figcaption>
+                 </figure>
+            </article>
+        </section>
+        <aside></aside>
+        <footer>
+            <p>&copy;版權所有 2021.11.15</p>
+        </footer>
+</div>
+    </body>
+</html>

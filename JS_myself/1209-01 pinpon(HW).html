@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rect {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-color: teal;
+        margin-top: 20px;
+      }
+      .ball {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: tomato;
+      }
+      .rect02 {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        margin-top: 20px;
+        background-color: lightsteelblue;
+      }
+      .ball02{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+    <div class="rect02"></div>
+
+
+    <script>
+      const rect = document.querySelector(".rect");
+      const balls = [];
+
+      for (let i = 0; i < 100; i++) {
+        const b = document.createElement("div");
+        b.className = "ball";
+        b.style.left = Math.floor(Math.random() * 270) + "px";
+        b.style.top = Math.floor(Math.random() * 285) + "px";
+        const size = 5 + Math.floor(Math.random() * 16) + "px";
+        b.style.width = b.style.height = size;
+        b.style.backgroundColor = `rgb(${Math.random() * 256},${Math.random() * 256},${Math.random() * 256})`;
+        rect.append(b);
+        balls.push(b);
+      }
+      function runballs() {
+        balls.forEach((b) => {
+          b.style.top =
+            parseInt(b.style.top) - 2 - Math.floor(Math.random() * 4) + "px";
+
+          //  保持有 2px 的移動
+          b.style.left =
+            parseInt(b.style.left) - (Math.floor(Math.random() * 5) - 2) + "px";
+
+          balls.forEach(function (b) {
+            if (parseInt(b.style.top) <= 0)
+              return b.style.top = parseInt(b.style.top) + 289 + "px";
+          });
+        });
+        setTimeout(runballs, 30);
+      }
+
+      runballs();
+
+      const rect02 = document.createRange'.rect02';
+      const ball02 = [];
+      const d = document.createElement('div');
+      d.className = 'ball02';
+      let x = parseInt(d.style.top) = 5 + 'px';
+      let y = parseInt(d.style.left) = 5 + 'px';
+      rect02.append(d);
+      ball02.push(d);
+
+      function pin_pon() {
+        ball02.forEach((d) => {
+          d.style.top = x - 2 + Math.floor(Math.random())+'px';
+          d.style.left = y - 2 + Math.floor(Math.random())+'px';
+
+          while( x >= 595 ){}
+
+          })
+        });
+      }
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04</title>
+    <style>
+        .wrap{
+            width: 1208px;
+            height: 708px;
+            background-image: url('./images/Musee\ du\ Louvre.jpg');
+            /* background-color: #000; */
+            position: relative;
+                        
+        }
+        
+        .wrap:hover{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ) ,url('./images/Musee\ du\ Louvre.jpg');
+            
+            /* opacity: 50%; */
+            /* opacity會繼承，alpha是指定單層 */
+            /* background: #000;
+            background-image: url("./images/Musee\ du\ Louvre.jpg");  */
+            /* fallback */
+            /* background-image: url("./images/Musee\ du\ Louvre.jpg"), linear-gradient(rgba(0, 0, 0, 0.6) rgba(0, 0, 0, 0.5));
+             W3C */
+
+        }
+        h2{
+            width: inherit;
+            color: #fff;
+            background-color: #000);
+            opacity: 20%;
+            padding: 10px;
+            margin: 0;
+            text-align:center;
+            position: absolute;
+            bottom: 0;
+        }
+        .wrap:hover h2{
+            /* 指定 wrap 底下的 h2 */
+            opacity: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+         <h2>Paris</h2>
+    </div>
+   
+    
+</body>
+</html>

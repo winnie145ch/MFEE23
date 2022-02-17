@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
+    />
+    <title>Ex13</title>
+    <style>
+      .demo {
+        
+        width: 800px;
+        height: 800px;
+      }
+      #demo{
+          width: 100%;
+          height: 100%;
+          display: none;
+          margin-top: 50px;
+      }
+      .img-warp{
+        width:620px;
+        margin: auto;
+      }
+      .img {
+        width: 100px;
+        height: 100px;
+        margin: 20px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+        <div class="demo m-auto">
+            <img src="" alt="" id="demo">
+        </div>
+        <div class="img-warp">
+          <img src="./img/image01.png" alt="" class="img"/>
+          <img src="./img/image02.png" alt="" class="img"/>
+          <img src="./img/image03.png" alt="" class="img"/>
+          <img src="./img/image04.png" alt="" class="img"/>
+          <img src="./img/image05.png" alt="" class="img"/>
+        </div>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $('.img').click(function(){
+            $('#demo').css('display','block');
+            console.log($(this).attr('src'));
+            $('#demo').attr('src',$(this).attr('src'));
+        })
+    </script>
+  </body>
+</html>

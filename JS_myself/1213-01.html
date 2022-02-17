@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+    // 舊的物件導向
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayHello = function(){
+            return this.name + ': Hello';
+        }
+    }
+
+    const p1 = new Person('Bill', 20);
+    console.log(p1.name);
+    console.log(p1.sayHello());
+    const10 = Person('Boll')
+    const p2 = new Person('Bill', 20);
+    console.log(p2.name);
+    console.log(p2.sayHello());
+
+
+
+
+</script>
+</body>
+
+</html>

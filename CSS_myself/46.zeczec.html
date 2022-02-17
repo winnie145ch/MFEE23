@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Zeczec</title>
+    <style>
+        .covid-bar-bg {
+            background: url(https://www.zeczec.com/assets/covid-bg-77f56d005bc040948b941170f83ddae815a5a9d31e556aea40921e63b8b89c35.png) center center;
+        }
+
+        .circle-white {
+            width: 65px;
+            height: 65px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icons-health {
+            font-size: 2.5rem;
+            color: green;
+        }
+
+        .covid-bar-bg p {
+            max-width: 31rem;
+        }
+
+        .covid-bar-bg span {
+            font-weight: bold;
+        }
+
+        .img-wrap {
+            width: 100%;
+            height: 190px;
+        }
+
+        .img-wrap img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .mycard {
+            padding-bottom: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="logo">
+                        <h1 class="gray text-mono hover-logo ma0 d-flex
+                 align-items-center">
+                            <div class="dib logo-safari-fix"><svg class="logo v-mid" style="height: 28px; width: 28px; "
+                                    viewBox="0 0 138 138" xmlns="http://www.w3.org/2000/svg">
+                                    <title>zeczec</title>
+                                    <path
+                                        d="M69 0a69 69 0 1 0 69 69A69 69 0 0 0 69 0zm38.7 75.53l-1.55 7.18c-.23 1.18-.81 1.54-1.82 1.49l-40.48-1.9a1.72 1.72 0 0 1-1.43-2.2l2.3-11.94a2.05 2.05 0 0 0-1.87-2.23l-31-2.09c-1 0-1.57-.66-1.57-1.82l1.16-6.81c.22-1.15.8-1.43 1.84-1.37l41.94 2.32a1.94 1.94 0 0 1 1.72 2.13l-2.19 12.13a1.88 1.88 0 0 0 1.87 2.1l30.06 1.39c.93 0 1.24.53 1.03 1.62z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <svg class="v-mid ml2 ml-3 mt-2" style="height: 20px; width: 44px; "
+                                viewBox="0 0 64.08 28.95" xmlns="http://www.w3.org/2000/svg">
+                                <title>嘖嘖</title>
+                                <path
+                                    d="M10.44 11.74h14.2a.6.6 0 0 0 .4-.75.61.61 0 0 0-.4-.44h-5.48a.42.42 0 0 1-.42-.42v-1.6a.42.42 0 0 1 .42-.42h5a.58.58 0 0 0 .42-.64.59.59 0 0 0-.42-.52h-5a.42.42 0 0 1-.42-.42V5.16a.42.42 0 0 1 .42-.42h5.72a.68.68 0 0 0 .42-.69.57.57 0 0 0-.42-.52h-5.72a.42.42 0 0 1-.42-.42V.47a.42.42 0 0 0-.34-.41h-1.67a.42.42 0 0 0-.5.43l.1 2.61a.42.42 0 0 1-.42.43h-5.34a.56.56 0 0 0-.42.55.69.69 0 0 0 .42.67h5.33a.42.42 0 0 1 .42.42v1.36a.42.42 0 0 1-.42.42h-4.74a.58.58 0 0 0-.43.57v.05a.59.59 0 0 0 .42.59h4.75a.42.42 0 0 1 .42.42v1.61a.42.42 0 0 1-.42.42h-5.47a.58.58 0 0 0-.42.59.63.63 0 0 0 .43.54zm14.04 1.73a.42.42 0 0 0-.42-.41H11.33a.7.7 0 0 0-.74.63v9.9a.75.75 0 0 0 .77.75l1.65-.05h10.81a.75.75 0 0 0 .76-.77c0-1.19-.08-3.67-.08-6.7V14.5zm-11.47 1.29a.42.42 0 0 1 .42-.42h8a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75h-8a.42.42 0 0 1-.42-.42m-5.44-1.53a.42.42 0 0 0 .39-.43c0-1.37-.14-13.17-.14-13.17a.42.42 0 0 0-.42-.42h-7a.42.42 0 0 0-.42.43v13.16a.42.42 0 0 0 .47.42h7.12zm-2-2.41a.42.42 0 0 1-.42.42H2.74a.42.42 0 0 1-.42-.42V8.84a.42.42 0 0 1 .42-.42h2.41a.42.42 0 0 1 .42.42v9.64z">
+                                </path>
+                                <path
+                                    d="M16.307 23.2l.808 1.057-5.972 4.57a.59.59 0 0 1-.827-.11l-.456-.596a.59.59 0 0 1 .11-.824l5.504-4.21a.59.59 0 0 1 .827.11zM49.01 11.74h14.2a.6.6 0 0 0 .4-.75.61.61 0 0 0-.4-.44h-5.48a.42.42 0 0 1-.42-.42v-1.6a.42.42 0 0 1 .42-.42h5a.58.58 0 0 0 .42-.64.59.59 0 0 0-.42-.52h-5a.42.42 0 0 1-.42-.42V5.16a.42.42 0 0 1 .42-.42h5.72a.68.68 0 0 0 .42-.69.57.57 0 0 0-.42-.52h-5.72a.42.42 0 0 1-.42-.42V.47a.42.42 0 0 0-.34-.41H55.3a.42.42 0 0 0-.5.43l.1 2.61a.42.42 0 0 1-.42.43h-5.32a.56.56 0 0 0-.42.55.69.69 0 0 0 .42.67h5.33a.42.42 0 0 1 .42.42v1.36a.42.42 0 0 1-.42.42h-4.74a.58.58 0 0 0-.43.57v.05a.59.59 0 0 0 .42.59h4.75a.42.42 0 0 1 .42.42v1.61a.42.42 0 0 1-.42.42h-5.47a.58.58 0 0 0-.42.59.63.63 0 0 0 .41.54zm14.04 1.73a.42.42 0 0 0-.42-.41H49.9a.7.7 0 0 0-.74.63v9.9a.75.75 0 0 0 .77.75l1.65-.05h10.81a.75.75 0 0 0 .76-.77c0-1.19-.08-3.67-.08-6.7V14.5zm-11.48 1.29a.42.42 0 0 1 .42-.42h8a.75.75 0 0 1 .75.75v7a.75.75 0 0 1-.75.75h-8a.42.42 0 0 1-.42-.42m-5.41-1.53a.42.42 0 0 0 .39-.43c0-1.37-.14-13.17-.14-13.17a.42.42 0 0 0-.42-.42h-7a.42.42 0 0 0-.42.43v13.16a.42.42 0 0 0 .47.42h7.12zm-2-2.41a.42.42 0 0 1-.42.42h-2.41a.42.42 0 0 1-.42-.42V8.84a.42.42 0 0 1 .42-.42h2.41a.42.42 0 0 1 .42.42v9.64zm-25.984 5.764l.754-.985a.59.59 0 0 1 .827-.11l5.504 4.21a.59.59 0 0 1 .11.825l-.453.596a.59.59 0 0 1-.827.11l-5.9-4.514a.09.09 0 0 1-.02-.126z">
+                                </path>
+                                <path
+                                    d="M54.943 23.217l.808 1.056-5.97 4.57a.59.59 0 0 1-.826-.11l-.45-.588a.59.59 0 0 1 .11-.827l5.504-4.21a.59.59 0 0 1 .827.11zm1.857 1.037l.753-.985a.59.59 0 0 1 .828-.11l5.506 4.21a.59.59 0 0 1 .11.825l-.455.596a.59.59 0 0 1-.827.11l-5.9-4.514a.09.09 0 0 1-.012-.134zm-5.87-7.534l.11.63a.3.3 0 0 0 .28.29l3.32.16a.3.3 0 0 1 .27.36l-.34 1.23a.3.3 0 0 0 .27.36l6.32.28a.3.3 0 0 0 .31-.3v-.67a.3.3 0 0 0-.29-.29h-3.77a.3.3 0 0 1-.28-.36l.32-1.32a.3.3 0 0 0-.28-.36l-5.87-.29a.3.3 0 0 0-.37.28zm-38.53 0l.11.63a.3.3 0 0 0 .28.29l3.32.16a.3.3 0 0 1 .27.36l-.39 1.23a.3.3 0 0 0 .27.36l6.32.28a.3.3 0 0 0 .31-.3v-.67a.3.3 0 0 0-.29-.29h-3.77a.3.3 0 0 1-.28-.36l.32-1.32a.3.3 0 0 0-.28-.36l-5.87-.29a.3.3 0 0 0-.32.28z">
+                                </path>
+                            </svg>
+                        </h1>
+                    </div>
+                    <div class="nav-link-area border-left ml-4 pl-4 d-flex align-items-center my-auto"
+                        style="height: 30px;">
+                        <a class="text-dark mx-2" href="#">探索</a>
+                        <a class="text-dark mx-2" href="#">提案</a>
+                    </div>
+                    <div class="nav-login-area d-flex align-items-center ml-auto">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-light mr-1">登入</button>
+                            <button type="button" class="btn btn-light mr-1">註冊</button>
+                            <button type="button" class="btn btn-light text-info">Facebook登入</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="covid-bar-bg py-5">
+        <div class="container pb-5">
+            <div class="row flex-column justify-cintent-center align-items-center">
+                <div class="circle-white rounded-circle">
+                    <span class="material-icons icons-health">
+                        health_and_safety
+                    </span>
+                </div>
+                <h4 class="my-3">嘖嘖 × 挺好店應援計畫</h4>
+                <p class="text-justify">疫情讓許多你我的愛店面臨經營困難，嘖嘖規劃近期啟動「挺好店應援計畫」，提供<span>實體空間／店家經營者</span>
+                    和<span>需要實體空間做展演的團隊</span> 應變疫情的上架方案。<a class="text-info" href="#">瞭解更多</a></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container mb-5"
+        style="margin-top: -70px; background: #fff; padding: 20px 20px; border-radius: 10px; box-shadow: 0 0 30px 2px rgb(0 0 0 / 10%);height: 720px; overflow: hidden;position: relative;">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <!-- col 自帶 position relative -->
+                <div class="mycard">
+                    <div class="img-wrap">
+                        <img src="https://s3-ap-northeast-1.amazonaws.com/zeczec-prod/asset_403482_image_big.jpg?1637429716"
+                            alt="">
+                    </div>
+                    <div class="position-relative">
+                        <h5>【香閣裡拉】台灣貓砂新配方更強力｜新包裝盒讓貓貓變身慣老闆｜【貓砂擼到寶】拿護照暢遊貓咖啡廳</h5>
+                        <small>挺好店 By <a href="#">芷林有限公司</a></small>
+                        <p>台灣環保貓砂【香閣裡拉】推動 「 貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。</p>
+                    </div>
+                    <div class="card-bottom d-flex justify-content-between align-items-center"
+                        style="border-top:2px solid  green; position: absolute;bottom: 0; left: 15px; ;right: 15px;">
+                        <!-- left:15 right:15 = width 100-calc(30) -->
+                        <small>剩下47天</small>
+                        <p style="margin: 0;">NT$96,954</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <div class="mycard">
+                    <div class="img-wrap"><img
+                            src="https://s3-ap-northeast-1.amazonaws.com/zeczec-prod/asset_403482_image_big.jpg?1637429716"
+                            alt=""></div>
+                    <div class="position-relative">
+                        <h5>【香閣裡拉】台灣貓砂新配方更強力｜新包裝盒讓貓貓變身慣老闆｜【貓砂擼到寶】拿護照暢遊貓咖啡廳</h5>
+                        <small>挺好店 By <a href="#">芷林有限公司</a></small>
+                        <p>台灣環保貓砂【香閣裡拉】推動 「 貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。台灣環保貓砂【香閣裡拉】推動 「
+                            貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。</p>
+                    </div>
+                    <div class="card-bottom d-flex justify-content-between align-items-center"
+                        style="border-top:2px solid  green; position: absolute; bottom: 0; left: 15px; ;right: 15px;">
+                        <small>剩下47天</small>
+                        <p style="margin: 0;">NT$96,954</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <div class="mycard">
+                    <div class="img-wrap">
+                        <img src="https://s3-ap-northeast-1.amazonaws.com/zeczec-prod/asset_403482_image_big.jpg?1637429716"
+                            alt="">
+                    </div>
+                    <div class="position-relative">
+                        <h5>【香閣裡拉】台灣貓砂新配方更強力｜新包裝盒讓貓貓變身慣老闆｜【貓砂擼到寶】拿護照暢遊貓咖啡廳</h5>
+                        <small>挺好店 By <a href="#">芷林有限公司</a></small>
+                        <p>台灣環保貓砂【香閣裡拉】推動 「 貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。</p>
+                    </div>
+                    <div class="card-bottom d-flex justify-content-between align-items-center"
+                        style="border-top:2px solid  green; position: absolute; bottom: 0; left: 15px; ;right: 15px;">
+                        <small>剩下47天</small>
+                        <p style="margin: 0;">NT$96,954</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <div class="mycard">
+                    <div class="img-wrap">
+                        <img src="https://s3-ap-northeast-1.amazonaws.com/zeczec-prod/asset_403482_image_big.jpg?1637429716"
+                            alt="">
+                    </div>
+                    <div class="position-relative">
+                        <h5>【香閣裡拉】台灣貓砂新配方更強力｜新包裝盒讓貓貓變身慣老闆｜【貓砂擼到寶】拿護照暢遊貓咖啡廳</h5>
+                        <small>挺好店 By <a href="#">芷林有限公司</a></small>
+                        <p>台灣環保貓砂【香閣裡拉】推動 「 貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。</p>
+                    </div>
+                    <div class="card-bottom d-flex justify-content-between align-items-center"
+                        style="border-top:2px solid  green; position: absolute;bottom: 0; left: 15px; ;right: 15px;">
+                        <!-- left:15 right:15 = width 100-calc(30) -->
+                        <small>剩下47天</small>
+                        <p style="margin: 0;">NT$96,954</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <div class="mycard">
+                    <div class="img-wrap"><img
+                            src="https://s3-ap-northeast-1.amazonaws.com/zeczec-prod/asset_403482_image_big.jpg?1637429716"
+                            alt=""></div>
+                    <div class="position-relative">
+                        <h5>【香閣裡拉】台灣貓砂新配方更強力｜新包裝盒讓貓貓變身慣老闆｜【貓砂擼到寶】拿護照暢遊貓咖啡廳</h5>
+                        <small>挺好店 By <a href="#">芷林有限公司</a></small>
+                        <p>台灣環保貓砂【香閣裡拉】推動 「 貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。台灣環保貓砂【香閣裡拉】推動 「
+                            貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。</p>
+                    </div>
+                    <div class="card-bottom d-flex justify-content-between align-items-center"
+                        style="border-top:2px solid  green; position: absolute; bottom: 0; left: 15px; ;right: 15px;">
+                        <small>剩下47天</small>
+                        <p style="margin: 0;">NT$96,954</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <div class="mycard">
+                    <div class="img-wrap">
+                        <img src="https://s3-ap-northeast-1.amazonaws.com/zeczec-prod/asset_403482_image_big.jpg?1637429716"
+                            alt="">
+                    </div>
+                    <div class="position-relative">
+                        <h5>【香閣裡拉】台灣貓砂新配方更強力｜新包裝盒讓貓貓變身慣老闆｜【貓砂擼到寶】拿護照暢遊貓咖啡廳</h5>
+                        <small>挺好店 By <a href="#">芷林有限公司</a></small>
+                        <p>台灣環保貓砂【香閣裡拉】推動 「 貓砂撸到寶」的計畫，用來振興貓咖啡廳、傳產貓工廠及維護貓文化，提高疫後產業經濟。</p>
+                    </div>
+                    <div class="card-bottom d-flex justify-content-between align-items-center"
+                        style="border-top:2px solid  green; position: absolute; bottom: 0; left: 15px; ;right: 15px;">
+                        <small>剩下47天</small>
+                        <p style="margin: 0;">NT$96,954</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            style="background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1)); width: 100%; height: 150px; position: absolute; bottom: 0; )">
+        </div>
+        <button class="btn py-3 px-3" style="position: absolute; bottom: 30px;left: 50%;transform: translateX(-50%); background: #fff; box-shadow: 0 0 30px 2px rgb(0 0 0 / 10%);">更多挺好店計畫</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

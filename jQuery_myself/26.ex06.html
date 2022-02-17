@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"
+    />
+    <title>Ex06</title>
+    <style>
+      .unShow {
+        display: none;
+      }
+      .form-row{
+          margin: 50px;
+      }
+      .form-group{
+          margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <form action="">
+          <div class="form-row">
+            <div class="form-group">
+              <select name="city" id="city">
+                <option value="0">請選擇</option>
+                <option value="1">基隆</option>
+                <option value="2">台北</option>
+                <option value="3">新北</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select name="area" id="area">
+                <option value="0">請選擇</option>
+                <option value="1" class="unShow"></option>
+                <option value="2" class="unShow"></option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      let areaArray = [
+        ["七堵", "中正", "暖暖"],
+        ["中正", "大安", "信義"],
+        ["蘆洲", "三重", "新店"],
+      ];
+      $("#city").change(function () {
+        // console.log("city value", $("#city").val());
+        // console.log("area", areaArray[$("#city").val() - 1]);取array的值
+        $("#city option").eq(0).addClass("unShow");
+        $("#area option").eq(0).siblings().removeClass("unShow");
+
+        for(let i = 0; i < $('#area option').length; i++ ){
+            $("#area option").eq(i).text(areaArray[$("#city").val()-1][i] + "區");
+        }
+
+        $("#area option").each(function (index, value) {
+          //   console.log("index", index);
+          //   console.log("value", $(value));
+         console.log($("#city").val()-1);
+        //   $(value).text(areaArray[$("#city").val()-1][index] + "區");
+        });
+      });
+    </script>
+  </body>
+</html>

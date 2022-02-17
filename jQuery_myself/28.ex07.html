@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css"/>
+    <title>scroll</title>
+    <style>
+    body{
+      margin: 0;  
+      height: 300vh;
+    }
+    .wrap{
+      height: 50px;
+      background-color:#ccc;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+    .box{
+      height: 100%;
+      width: 10%;
+      background-color: rgb(29, 47, 102);
+    }
+    </style>
+  </head>
+  <body>
+        <div class="wrap">
+          <div class="box"></div>
+        </div>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-4.6.1-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(window).scroll(function(){
+            // console.log('scrollTop:'+$(window).scrollTop());
+            // console.log('BodyTop:'+$('body').height());
+            // console.log('windowTop:'+$(window).height());
+            let widthX = $(window).scrollTop()/($('body').height()-$(window).height());
+
+            console.log(widthX);
+            
+            $('.box').css('width',widthX*100+'%');
+        });
+    </script>
+  
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ar = [12, 3, 78, 65, 2, 24, 91, 18];
+
+      let ar2 = ar.filter(function (value, index) {
+        return value % 2 === 0;
+      });
+      console.log(ar2);
+
+      let ar3 = ar.map(function (value, index) {
+        return value * value;
+      });
+      console.log("-------------");
+
+      const people = [
+        { name: "John", age: 31, gender: "male" },
+        { name: "David", age: 28, gender: "male" },
+        { name: "Mary", age: 27, gender: "female" },
+        { name: "Carl", age: 25, gender: "male" },
+        { name: "Flora", age: 22, gender: "female" },
+        { name: "Bill", age: 31, gender: "male" },
+        { name: "Robin", age: 31, gender: "female" },
+        { name: "Aaron", age: 31, gender: "male" },
+      ];
+      const arGender = people.filter(function (el) {
+        return el.gender === "female";
+      });
+      const arNew = people.map(function (el) {
+        let age10 = el.age + 10;
+        let name = el.name;
+        let gender = el.gender;
+        return { name, age10, gender };
+      });
+      aaa = [...people];
+
+      //   ar2[0].age = 99;
+      console.log(people);
+      console.log(arGender);
+      console.log(arNew);
+      console.log(aaa);
+
+      console.log("-----");
+
+      const br = [12, 99, "aaa", ["bill", 25, "male"]];
+      const br1 = br;
+      const br2 = JSON.stringify(br);
+      const br3 = JSON.parse(br2);
+
+      br[3][0] = "flora";
+      br[0] = 100;
+
+      console.log("br:", br);
+      console.log("br1:", br1);
+      console.log("br3:", br3);
+      var func = "A New Thing";
+      function func(cr) {
+        cr.push("abc");
+      }
+      const crList = [5, 6, 7];
+      const crList1 = [1, 2, 3];
+      func(crList);
+      console.log(crList);
+
+      func(crList1);
+      console.log(crList1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyper</title>
+    <style>
+        a:link{
+            color: coral;
+        }
+        a:visited{
+            color: cornflowerblue;
+        }
+        a:hover{
+            color: deeppink;
+        }
+        a:active{
+            color: gold;
+        }
+/* 接下來要做重複宣告，22一組 */
+        a:link, a:visited{
+            color: cornflowerblue;
+            text-decoration: underline;
+        }
+        a:hover, a:active{
+            color: gold;
+            text-decoration: none;
+        }
+/* 接下來要用Class修改 */
+/*                ▽只有這裡有space */
+        a.box:link, a.box:visited{
+            color: lightseagreen;
+            text-decoration: underline;
+        }
+        a.box:hover, a.box:active{
+            color: mediumpurple;
+            text-decoration: none;
+        }
+/* a.box 和 .box a 意義不一樣，
+               △一定要有space
+*/
+        a.box1:link, a.box1:visited{
+            color: mediumturquoise;
+            text-decoration: underline;
+        }
+        a.box1:hover, a.box1:active{
+            color: orangered;
+            text-decoration: none;
+    </style>
+</head>
+
+<body>
+    <h2>
+        超連結設定
+    </h2>
+    <a href="">第一個超連結</a><br>
+    <a href="" class="box">第二個超連結</a><br>
+    <a class="box1" href="">第三個超連結</a>
+</body>
+</html>

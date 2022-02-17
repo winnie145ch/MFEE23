@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="doConnect">Connect</button>
+    <button id="doClose">close</button>
+    <br>
+    <input type="text" id="msg">
+    <button id="doSend">send</button>
+    <div id="info"></div>
+
+    <script>
+        let socket;
+
+        const myOpen = event => {
+            info.innerHTML += '----connected----<br>';
+        };
+        const myMsg = event => {
+            info.innerHTML += `${event.data}<br>`;
+        };
+        const myClose = event => {
+            info.innerHTML += '---- closed ----<br>';
+        };
+
+        document.addEventListener('click', event=>{
+            switch(event.target.id){
+                case 'doConnect':
+                    if(!socket || socket.readyState!==WebSocket.OPEN){
+                        socket = new WebSocket('ws://192.168.40.200:3000');
+                        socket.addEventListener('open', myOpen);
+                        socket.addEventListener('message', myMsg);
+                        socket.addEventListener('close', myClose);
+                    }
+                    break;
+
+                case 'doClose':
+                    if(socket && socket.readyState===WebSocket.OPEN)
+                        socket.close();
+                    break;
+                case 'doSend':
+                    if(socket && socket.readyState===WebSocket.OPEN)
+                        socket.send(msg.value);
+                    break;
+            }
+
+
+
+
+
+        });
+
+    </script>
+
+
+</body>
+</html>

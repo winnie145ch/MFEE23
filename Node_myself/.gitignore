@@ -1,0 +1,8 @@
+.vscode
+/node_modules
+package-lock.json
+headers.txt
+/public/bootstrap-4.6.1-dist
+/public/fontawesome
+/public/js
+requests.rest
