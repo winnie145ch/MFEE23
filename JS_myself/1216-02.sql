@@ -1,1 +1,0 @@
-UPDATE `products` SET `sid`='[value-1]',`author`='[value-2]',`bookname`='[value-3]',`category_sid`='[value-4]',`book_id`='[value-5]',`publish_date`='[value-6]',`pages`='[value-7]',`price`='[value-8]',`isbn`='[value-9]',`on_sale`='[value-10]',`introduction`='[value-11]' WHERE 1
