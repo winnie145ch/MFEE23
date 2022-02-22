@@ -57,12 +57,3 @@ export default App;
 //parents.js
 
 //socialshare-app.js
-
-import Active from "./Components/homework01";
-
-function App(){
-  return(
-    ,.
-    Home
-  )
-}
