@@ -1,20 +1,14 @@
 import { useState } from 'react';
-import Checkbox from './Components/checkbox';
-import RadioButton from './Components/radiobutton';
 
 function App() {
   const [inputText, setInputText] = useState('');
   const [textArea, setTextArea] = useState('');
 
-  //radio group
+  //radio
   const [radioValue, setRadioValue] = useState('');
   const foodOptions = ['牛肉麵', '蚵仔煎', '大雞排'];
 
-  //radio - 專用元件
-  const [gender2, setGender2] = useState('');
-  const genderOptions = ['male', 'female', 'other'];
-
-  //select
+  //selecet
   const [selectedValue, setSeletedValue] = useState('');
 
   //checkbox single
@@ -23,10 +17,6 @@ function App() {
   //checkbox group
   const [likeList, setLikeList] = useState([]);
   const fruitOptions = ['watermelon', 'mango', 'orange'];
-
-  //checkbox 專用元件
-  const [likeList2, setLikeList2] = useState([]);
-  const fruitOptions2 = ['cherry', 'plum', 'apple', 'banana'];
 
   return (
     <>
@@ -101,13 +91,12 @@ function App() {
                 //先判斷是否有在狀態陣列中
                 const inState = likeList.includes(e.target.value);
                 if (inState) {
-                  //if 在陣列中 -> 移除
+                   //if 在陣列中 -> 移除
                   const newLikeList = likeList.filter(
                     (v, i) => v !== e.target.value
                   );
                   setLikeList(newLikeList);
                 } else {
-                  //else  -> 加入陣列
                   const newLikeList = [...likeList, e.target.value];
                   setLikeList(newLikeList);
                 }
@@ -115,28 +104,6 @@ function App() {
             />
             <label>{v}</label>
           </div>
-        );
-      })}
-      <h3>選項按鈕(專用)</h3>
-      {genderOptions.map((v, i) => {
-        return (
-          <RadioButton
-            key={i}
-            value={v}
-            checkedValue={gender2}
-            setCheckedValue={setGender2}
-          />
-        );
-      })}
-      <h3>多個核取方塊(專用元件)</h3>
-      {fruitOptions2.map((v, i) => {
-        return (
-          <Checkbox
-            key={i}
-            value={v}
-            checkedValueList={likeList2}
-            setCheckedValueList={setLikeList2}
-          />
         );
       })}
     </>
