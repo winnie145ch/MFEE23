@@ -58,17 +58,17 @@ export default App;
 
 //socialshare-app.js
 
-import Parent from './Components/parents0222';
+// import Parent from './Components/parents0222';
 
-function App() {
-  return (
-    <>
-      <Parent />
-    </>
-  );
-}
+// function App() {
+//   return (
+//     <>
+//       <Parent />
+//     </>
+//   );
+// }
 
-export default App;
+// export default App;
 
 //cart
 import './App.css';
