@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react';
 
-function RadioButton(props){
-    const{name, value, checkedValue, handleFieldChange, required}=props
+function RadioButton(props) {
+  const { name, value, checkedValue, handleFieldChange, required } = props;
 
-    return(
-        <>
-            <input type="radio"
-    name={name}
-    value={value}
-    checked={checkedValue === value}
-    onChange
-            />
-        </>
-    )
+  return (
+    <>
+      <input
+        type="radio"
+        name={name}
+        value={value}
+        checked={checkedValue === value}
+        onChange
+      />
+    </>
+  );
 }
 
-export default RadioButton
+export default RadioButton;
