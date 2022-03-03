@@ -1,13 +1,18 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import About from './pages/Abouts';
-import Contact from './pages/Contact';
-import Product from './pages/Product';
+// import About from './pages/Abouts';
+// import Contact from './pages/Contact';
 import Login from './pages/Login';
 import NotFoundPage from './pages/NotFoundPage';
+import ProductList from './pages/ProductList';
+import ProductDetail from './pages/ProductDetail';
+import ProductListQS from './pages/ProductListQS';
+import ProductDetailQS from './pages/ProductDetailQS';
 
-import { useState } from 'react';
+// 元件
+import Menu from './Components/Menu';
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -15,25 +20,27 @@ function App() {
   return (
     <Router>
       <>
-        <h2> a href </h2>
-        <a href="/">首頁</a>
-        <br />
-        <a href="/login">登入</a>
-        <hr />
-        <h2>Link to</h2>
-        <Link to="/">首頁</Link>
-        <br />
-        <Link to="/login">登入</Link>
-        <hr />
+        {/* menu */}
+        <Menu />
+        {/* 路由表 */}
         <Switch>
-          <Route exact path="/about">
+          {/* <Route exact path="/about">
             <About />
           </Route>
           <Route path="/about/contact">
             <Contact />
+          </Route> */}
+          <Route path="/product-list-qs">
+            <ProductListQS />
           </Route>
-          <Route path="/product">
-            <Product />
+          <Route path="/product-detail-qs">
+            <ProductDetailQS />
+          </Route>
+          <Route path="/product-list">
+            <ProductList />
+          </Route>
+          <Route path="/product-detail/:id">
+            <ProductDetail />
           </Route>
           <Route path="/login">
             <Login auth={auth} setAuth={setAuth} />
